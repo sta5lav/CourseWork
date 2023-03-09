@@ -1,14 +1,17 @@
 import java.util.Objects;
 
 public class Employee {
+    private static int idCounter = 1;
+    private final int id;
     private final String name;
     private final String middleName;
     private final String surname;
     private int otdel;
     private int salary;
-    private static int id = 1;
+
 
     public Employee(String name, String middleName, String surname, int otdel, int salary) {
+        this.id = idCounter++;
         this.name = name;
         this.middleName = middleName;
         this.surname = surname;
@@ -44,8 +47,8 @@ public class Employee {
         this.salary = salary;
     }
 
-    public static int getId() {
-        return id++;
+    public int getId() {
+        return id;
     }
 
     @Override

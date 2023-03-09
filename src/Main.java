@@ -14,18 +14,36 @@ public class Main {
         employee[8] = new Employee("Евгений", "Петрович", "Лебедев", 5, 51000);
         employee[9] = new Employee("Иван", "Викторович", "Васильев", 5, 55000);
         /*1*/
+        getEmployeeList(employee);
+        /*2*/
+        getSumOfSalaries(employee);
+        /*3*/
+        employeeMinSalary(employee);
+        /*4*/
+        employeeMaxSalary(employee);
+        /*5*/
+        employeeMiddleSalary(employee);
+        /*6*/
+        getInitialsList(employee);
+
+    }
+
+    static void getEmployeeList(Employee[] employee) {
         System.out.println("a. Список всех сотрудников ");
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i]);
         }
+    }
 
-        /*2*/
+    static void getSumOfSalaries(Employee[] employee) {
         int sum = 0;
-        for (int i = 0; i < employee.length; i++) {
-            sum = sum + employee[i].getSalary();
+        for (Employee value : employee) {
+            sum = sum + value.getSalary();
         }
         System.out.println("b. Сумма затрат на зарплаты в месяц = " + sum);
-        /*3*/
+    }
+
+    static void employeeMinSalary(Employee[] employee) {
         int min = employee[0].getSalary();
         String minSalary = null;
         for (int i = 0; i < employee.length; i++) {
@@ -39,8 +57,8 @@ public class Main {
             }
         }
         System.out.println("с. Сотрудник с минимальной зарплатой: " + minSalary + " (" + min + ") ");
-
-        /*4*/
+    }
+    static void employeeMaxSalary(Employee[] employee) {
         int max = employee[0].getSalary();
         String maxSalary = null;
         for (int i = 0; i < employee.length; i++) {
@@ -54,18 +72,19 @@ public class Main {
             }
         }
         System.out.println("d. Сотрудник с максимальной зарплатой: " + maxSalary + " (" + max + ") ");
-
-        /*5*/
+    }
+    static void employeeMiddleSalary(Employee[] employee) {
+        int sum = 0;
         int middleSum = 0;
         middleSum = sum / employee.length;
         System.out.println("e. Среднее значение зарплат = " + middleSum);
+    }
 
-        /*6*/
+    static void getInitialsList(Employee[] employee) {
         System.out.println("f. Список всех сотрудников: ");
         for (int i = 0; i < employee.length; i++) {
             System.out.println(employee[i].getName() + " " + employee[i].getMiddleName() + " " + employee[i].getSurname());
         }
-
     }
 
 
