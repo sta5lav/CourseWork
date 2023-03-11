@@ -1,13 +1,17 @@
+import java.util.Objects;
 
 public class Employee {
-    private String name;
-    private String middleName;
-    private String surname;
+    private static int idCounter = 1;
+    private final int id;
+    private final String name;
+    private final String middleName;
+    private final String surname;
     private int otdel;
     private int salary;
-    Counter counter;
+
 
     public Employee(String name, String middleName, String surname, int otdel, int salary) {
+        this.id = idCounter++;
         this.name = name;
         this.middleName = middleName;
         this.surname = surname;
@@ -41,5 +45,23 @@ public class Employee {
 
     public void setSalary(int salary) {
         this.salary = salary;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return "ID сотрудника " + getId() +
+                " Ф.И.О. = " + name +
+                " " + middleName +
+                " " + surname +
+                ", Отдел = " + otdel +
+                ", Зарплата = " + salary;
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, middleName, surname, otdel, salary, id);
     }
 }
