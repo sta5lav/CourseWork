@@ -24,6 +24,7 @@ public class Employee {
     }
 
     public String getMiddleName() {
+
         return middleName;
     }
 
@@ -60,6 +61,7 @@ public class Employee {
                 ", Отдел = " + otdel +
                 ", Зарплата = " + salary;
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(name, middleName, surname, otdel, salary, id);
